@@ -1,1 +1,1 @@
-# Kyle and Laura Wedding Website
+# Laura and Kyle Wedding Website

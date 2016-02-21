@@ -53,11 +53,14 @@ img {
 
 // Sections
 .section {
-
+    padding: 3rem 0;
 }
 
 .section--hero {
-
+    background: url(../img/cover.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 800px;
+    min-height: 100vh;
 }
 
 .section--countdown {
