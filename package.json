@@ -1,0 +1,38 @@
+{
+  "name": "10.01.2016",
+  "version": "1.0.0",
+  "description": "Kyle and Laura are getting married!",
+  "scripts": {
+    "browsersync": "browser-sync start --server --files 'css/style.css, js/*.min.js, **/*.html'",
+    "build": "npm run js:build && npm run css:build",
+    "css": "npm run css:watch",
+    "css:autoprefix": "postcss --use autoprefixer --output style.css style.css",
+    "css:build": "npm run css:compile && npm run css:autoprefix",
+    "css:compile": "node-sass --output-style compressed scss/style.scss css/style.css",
+    "css:watch": "watch 'npm run css:build' scss",
+    "dev": "parallelshell 'npm run watch' 'npm run browsersync'",
+    "js": "npm run js:watch",
+    "js:build": "npm run js:head && npm run js:main",
+    "js:head": "uglifyjs js/head/*.js -o js/head.min.js",
+    "js:main": "uglifyjs js/vendor/*.js js/src/*.js -o js/main.min.js",
+    "js:watch": "watch 'npm run js:build' js/head js/vendor js/src",
+    "watch": "parallelshell 'npm run js' 'npm run css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjbrum/10.01.2016.git"
+  },
+  "author": "Kyle Brumm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjbrum/10.01.2016/issues"
+  },
+  "homepage": "https://github.com/kjbrum/10.01.2016#readme",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "node-sass": "latest",
+    "parallelshell": "latest",
+    "postcss-cli": "latest",
+    "watch": "latest"
+  }
+}

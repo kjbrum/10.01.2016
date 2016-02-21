@@ -1,0 +1,90 @@
+// Main
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+body {
+	font: 100%/1.5 $font;
+	-webkit-text-size-adjust: 100%;
+	color: $primary;
+    min-width: $min-width;
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $primary-light;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: 0;
+    margin: 1rem auto;
+    height: 1px;
+    background: $primary;
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    background: $white;
+    color: $secondary;
+}
+
+::-moz-selection {
+    background: $white;
+    color: $secondary;
+}
+
+// Sections
+.section {
+
+}
+
+.section--hero {
+
+}
+
+.section--countdown {
+    .countdown {
+        text-align: center;
+
+        .heading {
+            font-size: 3rem;
+            color: $primary;
+            text-transform: uppercase;
+        }
+
+        .block {
+            font-size: 2.5rem;
+            color: $secondary;
+            line-height: 1;
+            border-radius: 5px;
+            padding: 2rem 0;
+            border: 2px solid $secondary;
+        }
+
+        span {
+            display: block;
+            font-size: 1.2rem;
+            padding-top: 1rem;
+            text-transform: uppercase;
+            color: $secondary-light;
+        }
+    }
+}
