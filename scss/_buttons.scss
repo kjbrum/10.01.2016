@@ -6,17 +6,18 @@
 	color: $primary;
 	line-height: 1;
 	font-weight: normal;
-	padding: 1rem;
+	padding: 1rem 1.5rem;
 	border: 1px solid $primary;
 	text-align: center;
     font-family: $font;
     font-size: 1rem;
     cursor: pointer;
-    transition: none;
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
 
 	&:hover,
 	&:focus {
-		color: $secondary;
+		color: $white;
 		background: $primary;
 	}
 
@@ -27,7 +28,7 @@
 }
 
 .btn-small {
-	padding: 0.5rem;
+	padding: 0.5rem 0.75rem;
 	font-size: 0.8rem;
 }
 

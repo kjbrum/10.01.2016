@@ -2,8 +2,9 @@
 
 ## To-Do
 
-- Lodging
+- Accomodations
 - Registries
 - RSVP
 - Map
 - Hashtag?
+- Facts slideshow (random facts about us)?
