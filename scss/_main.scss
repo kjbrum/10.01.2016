@@ -59,6 +59,7 @@ img {
 
 .section--alt {
     background: $offwhite;
+    background: $offwhite url(../img/bg/slanted-lines.png) repeat top left;
 }
 
 
@@ -85,7 +86,7 @@ img {
 }
 
 .section--dark {
-    background: $primary;
+    background: $primary url(../img/bg/criss-crosses.png) repeat top left;
 }
 
 .section--dark-secondary {
@@ -93,7 +94,7 @@ img {
 }
 
 .section--light {
-    background: $primary-light;
+    background: $primary-light url(../img/bg/criss-crosses.png) repeat top left;
 }
 
 .section--light-secondary {
@@ -105,7 +106,8 @@ img {
 }
 
 .section--hero {
-    background: url(../img/cover.jpg) no-repeat center center;
+    // background: url(../img/cover.jpg) no-repeat center center;
+    background: url(../img/orion.jpg) no-repeat center center;
     background-size: cover;
     min-height: 800px;
     min-height: 100vh;
