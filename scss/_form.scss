@@ -9,7 +9,8 @@ input[type=text],
 input[type=email] {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #eeeeee;
+    border: 1px solid $offwhite;
+    font-size: 0.8rem;
 
     &:hover {
         border-color: $secondary-light;
@@ -56,6 +57,7 @@ textarea {
             color: $primary;
             cursor: pointer;
             opacity: 0.5;
+            transition: 0.3s ease-in-out;
 
             &:hover {
                 opacity: 1;

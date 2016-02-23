@@ -211,6 +211,29 @@ img {
     }
 }
 
+.section--timeline,
+.section--accomodations {
+    img {
+        margin: 0 auto;
+        border-radius: 100%;
+    }
+
+    h4 {
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+
 .section--timeline {
+    h4 {
+        margin-bottom: 0;
+    }
+
+    .location {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.section--rsvp {
 
 }
