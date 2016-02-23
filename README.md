@@ -5,8 +5,8 @@
 - [x] Accomodations
 - [ ] RSVP
     - [ ] Accept
-        - [ ] First name, last name, email
-        - [ ] Guest? (first name, last name, email)
+        - [x] First name, last name, email
+        - [x] Guest? (first name, last name, email)
         - [ ] Will you be using the shuttle service?
         - [x] Comments
         - [ ] Food preference (Make your ideal meal for the night (be realistic), checkboxes with all the food options)

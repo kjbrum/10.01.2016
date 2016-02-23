@@ -26,6 +26,11 @@ textarea {
     resize: none;
 }
 
+input[type=submit] {
+    font-family: $font-special;
+    font-size: 2rem;
+}
+
 .personal-accept,
 .personal-decline,
 .guest-yes {
