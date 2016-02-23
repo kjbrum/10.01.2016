@@ -13,7 +13,9 @@
     - [x] Decline
         - [x] First name, last name
         - [x] Comments
+    - [ ] Error handling
 - [ ] Request a Song (Either save to spreadsheet/email or try to automatically search for song and add to playlist(IFTTT) )
+    - [ ] Error handling
 - [ ] Registries
 - [ ] Map (display markers for the ceremony and reception, maybe the hotel too)
 - [ ] Footer credits (development, photography, etc...)
