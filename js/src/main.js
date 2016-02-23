@@ -12,17 +12,15 @@
         });
 
     $('input[name=attending]').change(function() {
+        resetFields();
+
         if(this.value == 'accept') {
             $('.personal-accept').show();
             $('.personal-decline').hide();
         } else if(this.value == 'decline') {
-            var inputs = ['guest_attending', 'guests_first_name', 'guests_last_name', 'guests_email', 'comments', 'regrets']
-            $.each(inputs, function(idx, val) {
-                $('input[name='+val+']').val();
-            });
-
             $('.personal-accept').hide();
             $('.personal-decline').show();
+            $('.guest-yes').hide();
         }
     });
 
@@ -33,5 +31,16 @@
             $('.guest-yes').hide();
         }
     });
+
+    var resetFields = function() {
+        // Text fields
+        $('input[name=email], input[name=guests_first_name], input[name=guests_last_name], input[name=guests_email]').val('');
+
+        // Radio fields
+        $('input[name=guest_attending]').attr('checked', false);
+
+        // Textarea fields
+        $('textarea[name=comments], textarea[name=regrets]').val('');
+    }
 
 })(jQuery);

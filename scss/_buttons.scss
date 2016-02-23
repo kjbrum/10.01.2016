@@ -14,11 +14,14 @@
     cursor: pointer;
     transition: 0.3s ease-in-out;
     border-radius: 3px;
+    background: transparent;
+    text-transform: uppercase;
 
 	&:hover,
 	&:focus {
-		color: $white;
-		background: $primary;
+		color: $primary-light;
+		// background: $primary;
+		border-color: $primary-light;
 	}
 
 	&.disabled {
@@ -35,4 +38,9 @@
 .btn-large {
 	padding: 1.5rem;
 	font-size: 1.4rem;
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
 }

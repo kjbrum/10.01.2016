@@ -1,11 +1,15 @@
 textarea,
+input {
+    outline: none;
+    box-shadow: none;
+}
+
+textarea,
 input[type=text],
 input[type=email] {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #eeeeee;
-    outline: none;
-    box-shadow: none;
 
     &:hover {
         border-color: $secondary-light;
@@ -25,4 +29,7 @@ textarea {
 .personal-decline,
 .guest-yes {
     display: none;
+}
+
+.rsvp-form {
 }
