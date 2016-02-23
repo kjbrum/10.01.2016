@@ -17,7 +17,7 @@
 - [ ] Registries
 - [ ] Map (display markers for the ceremony and reception, maybe the hotel too)
 - [ ] Footer credits (development, photography, etc...)
-- [ ] Add a favicon (gradient heart?)
+- [x] Add a favicon (gradient heart?)
 - [ ] Add some subtle scrolling animations
 - [ ] Hashtag?
 - [ ] Facts slideshow (random facts about us)?
