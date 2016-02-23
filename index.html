@@ -150,10 +150,12 @@
 
                 <div class="g g-m-2">
                     <div class="gi">
+                        <h4>Lodging</h4>
                         <p>We have made lodging accomodations at a hotel in Mount Vernon, Iowa. Just tell them you want to be put with the "Brumm" party.</p>
                     </div>
 
                     <div class="gi">
+                        <h4>Transportation</h4>
                         <p>We will be offering bus rides to and from the hotel for the reception.</p>
                     </div>
                 </div>
@@ -161,15 +163,86 @@
         </section>
 
         <!-- The RSVP Section -->
-        <section class="section section--rsvp">
+        <section class="section section--alt section--rsvp">
             <div class="container">
                 <h3 class="heading">RSVP</h3>
 
-                <div class="g">
-                    <div class="gi gi-m-6">
-                    <input type="text">
+                <form class="rsvp-form">
+                    <div class="g">
+                        <!-- Attending? -->
+                        <div class="gi gi-m-8 gi-offset-m-2">
+                            <p class="description">Will you be attending?</p>
+
+                            <label>
+                                <input name="attending" type="radio" value="accept"> Happily Accept
+                            </label>
+
+                            <label>
+                                <input name="attending" type="radio" value="decline"> Regretfully Decline
+                            </label>
+                        </div>
+
+                        <!-- Personal Info -->
+                        <div class="gi gi-m-3 gi-offset-m-3">
+                            <input name="first_name" type="text" placeholder="First Name*" required>
+                        </div>
+
+                        <div class="gi gi-m-3">
+                            <input name="last_name" type="text" placeholder="Last Name*" required>
+                        </div>
+
+                        <!-- Personal Decline -->
+                        <div class="personal-decline">
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <textarea name="regrets" placeholder="Leave Your Regrets..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Personal Accept -->
+                        <div class="personal-accept">
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <input name="email" type="email" placeholder="Email*" required>
+                            </div>
+
+                            <!-- Guest Attending? -->
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <p class="description">Will you be bringing a guest?*</p>
+
+                                <label>
+                                    <input name="guest_attending" type="radio" value="yes" required> Yes
+                                </label>
+
+                                <label>
+                                    <input name="guest_attending" type="radio" value="no" required> No
+                                </label>
+                            </div>
+
+                            <!-- Guest Yes -->
+                            <div class="guest-yes">
+                                <div class="gi gi-m-3 gi-offset-m-3">
+                                    <input name="guests_first_name" type="text" placeholder="Guest's First Name">
+                                </div>
+
+                                <div class="gi gi-m-3">
+                                    <input name="guests_last_name" type="text" placeholder="Guest's Last Name">
+                                </div>
+
+                                <div class="gi gi-m-6 gi-offset-m-3">
+                                    <input name="guests_email" type="email" placeholder="Guest's Email">
+                                </div>
+                            </div>
+
+                            <!-- Comments -->
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <textarea name="comments" placeholder="Leave a Comment..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="gi gi-m-8 gi-offset-m-2">
+                            <input type="submit" class="btn" value="Submit">
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
 

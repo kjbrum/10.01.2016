@@ -11,4 +11,27 @@
             }
         });
 
+    $('input[name=attending]').change(function() {
+        if(this.value == 'accept') {
+            $('.personal-accept').show();
+            $('.personal-decline').hide();
+        } else if(this.value == 'decline') {
+            var inputs = ['guest_attending', 'guests_first_name', 'guests_last_name', 'guests_email', 'comments', 'regrets']
+            $.each(inputs, function(idx, val) {
+                $('input[name='+val+']').val();
+            });
+
+            $('.personal-accept').hide();
+            $('.personal-decline').show();
+        }
+    });
+
+    $('input[name=guest_attending]').change(function() {
+        if(this.value == 'yes') {
+            $('.guest-yes').show();
+        } else if(this.value == 'no') {
+            $('.guest-yes').hide();
+        }
+    });
+
 })(jQuery);
