@@ -171,13 +171,15 @@
                         <div class="gi gi-m-6 gi-offset-m-3">
                             <p class="description">Will you be attending?</p>
 
-                            <label>
-                                <input name="attending" type="radio" value="accept"> Happily Accept
-                            </label>
+                            <div class="attending-options">
+                                <label>
+                                    <input name="attending" type="radio" value="accept"><span>Happily Accept</span>
+                                </label>
 
-                            <label>
-                                <input name="attending" type="radio" value="decline"> Regretfully Decline
-                            </label>
+                                <label>
+                                    <input name="attending" type="radio" value="decline"><span>Regretfully Decline</span>
+                                </label>
+                            </div>
                         </div>
 
                         <!-- Personal Info -->
@@ -206,13 +208,15 @@
                             <div class="gi gi-m-6 gi-offset-m-3">
                                 <p class="description">Will you be bringing a guest?*</p>
 
-                                <label>
-                                    <input name="guest_attending" type="radio" value="yes" required> Yes
-                                </label>
+                                <div class="guest-attending-options">
+                                    <label>
+                                        <input name="guest_attending" type="radio" value="yes" required><span>Yes</span>
+                                    </label>
 
-                                <label>
-                                    <input name="guest_attending" type="radio" value="no" required> No
-                                </label>
+                                    <label>
+                                        <input name="guest_attending" type="radio" value="no" required><span>No</span>
+                                    </label>
+                                </div>
                             </div>
 
                             <!-- Guest Yes -->

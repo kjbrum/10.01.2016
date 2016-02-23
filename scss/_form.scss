@@ -32,4 +32,40 @@ textarea {
 }
 
 .rsvp-form {
+    .description {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+
+    .attending-options,
+    .guest-attending-options {
+        input {
+            display: none;
+        }
+
+        label:first-of-type span {
+            margin-right: 1rem;
+        }
+
+        span {
+            font-family: $font-special;
+            font-size: 1.75rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid $primary;
+            color: $primary;
+            cursor: pointer;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        input:checked + span {
+            opacity: 1;
+            background: $primary;
+            color: $white;
+        }
+    }
 }
