@@ -2,13 +2,19 @@
 
 h1, h2, h3,
 h4, h5, h6 {
-
+    font-family: $font-thin;
 }
 
 
 .heading {
-    text-align: center;
-    font-size: 3rem;
+    font-family: $font-special;
+    font-size: 5rem;
     color: $primary;
-    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+
+    span {
+        font-weight: bold;
+    }
+    // text-transform: uppercase;
 }
