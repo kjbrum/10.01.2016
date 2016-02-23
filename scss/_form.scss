@@ -48,6 +48,7 @@ input[type=submit] {
         margin-bottom: 1rem;
         font-size: 1rem;
         text-transform: uppercase;
+        font-weight: bold;
     }
 
     .attending-options,
@@ -87,6 +88,12 @@ input[type=submit] {
     }
 
     .meal-options {
+        p {
+            &:not(:first-of-type) {
+                margin-top: 0.5rem;
+            }
+        }
+
         label {
             margin: 0 !important;
         }
