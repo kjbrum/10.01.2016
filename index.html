@@ -209,6 +209,10 @@
                                 <input name="email" type="email" placeholder="Email*" required>
                             </div>
 
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <hr>
+                            </div>
+
                             <!-- Guest Attending? -->
                             <div class="gi gi-m-6 gi-offset-m-3">
                                 <p class="description">Will you be bringing a guest?*</p>
@@ -227,15 +231,34 @@
                             <!-- Guest Yes -->
                             <div class="guest-yes">
                                 <div class="gi gi-m-3 gi-offset-m-3">
-                                    <input name="guests_first_name" type="text" placeholder="Guest's First Name">
+                                    <input name="guests_first_name" type="text" placeholder="Guest's First Name*">
                                 </div>
 
                                 <div class="gi gi-m-3">
-                                    <input name="guests_last_name" type="text" placeholder="Guest's Last Name">
+                                    <input name="guests_last_name" type="text" placeholder="Guest's Last Name*">
                                 </div>
 
                                 <div class="gi gi-m-6 gi-offset-m-3">
                                     <input name="guests_email" type="email" placeholder="Guest's Email">
+                                </div>
+                            </div>
+
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <hr>
+                            </div>
+
+                            <!-- Shuttle -->
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <p class="description">Will you be using the shuttle service?*</p>
+
+                                <div class="shuttle-options">
+                                    <label>
+                                        <input name="shuttle" type="radio" value="yes" required><span>Yes</span>
+                                    </label>
+
+                                    <label>
+                                        <input name="shuttle" type="radio" value="no" required><span>No</span>
+                                    </label>
                                 </div>
                             </div>
 
