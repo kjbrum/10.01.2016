@@ -37,7 +37,7 @@
         $('input[name=email], input[name=guests_first_name], input[name=guests_last_name], input[name=guests_email]').val('');
 
         // Radio fields
-        $('input[name=guest_attending]').attr('checked', false);
+        $('input[name=guest_attending], input[name=shuttle], input[name=meal]').attr('checked', false);
 
         // Textarea fields
         $('textarea[name=comments], textarea[name=regrets]').val('');
