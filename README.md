@@ -19,3 +19,4 @@
 - [ ] Hashtag?
 - [ ] Facts slideshow (random facts about us)?
 - [ ] Footer credits (development, photography, etc...)
+- [ ] Add a favicon (gradient heart?)
