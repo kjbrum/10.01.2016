@@ -8,8 +8,8 @@
         - [x] First name, last name, email
         - [x] Guest? (first name, last name, email)
         - [ ] Will you be using the shuttle service?
-        - [x] Comments
         - [ ] Food preference (Make your ideal meal for the night (be realistic), checkboxes with all the food options)
+        - [x] Comments
     - [x] Decline
         - [x] First name, last name
         - [x] Comments
