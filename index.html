@@ -174,15 +174,15 @@
                     <div class="g">
                         <!-- Attending? -->
                         <div class="gi gi-m-6 gi-offset-m-3">
-                            <p class="description">Will you be attending?</p>
+                            <p class="description">Will you be attending?*</p>
 
                             <div class="attending-options">
                                 <label>
-                                    <input name="attending" type="radio" value="accept"><span>Happily Accept</span>
+                                    <input name="attending" type="radio" value="accept" required><span>Happily Accept</span>
                                 </label>
 
                                 <label>
-                                    <input name="attending" type="radio" value="decline"><span>Regretfully Decline</span>
+                                    <input name="attending" type="radio" value="decline" required><span>Regretfully Decline</span>
                                 </label>
                             </div>
                         </div>
@@ -261,6 +261,27 @@
                                     </label>
                                 </div>
                             </div>
+
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <hr>
+                            </div>
+
+                            <!-- Meal -->
+                            <div class="gi gi-m-6 gi-offset-m-3">
+                                <p class="description">Choose your ideal meal/drinks for the night (be realistic).*</p>
+
+                                <div class="meal-options">
+                                    <label><input name="meal" type="checkbox" value="Hot Dog" required><span>Hot Dog</span></label>
+                                    <label><input name="meal" type="checkbox" value="Burger" required><span>Burger</span></label>
+                                    <label><input name="meal" type="checkbox" value="Chicken" required><span>Chicken</span></label>
+                                    <label><input name="meal" type="checkbox" value="Mashed Potatoes" required><span>Mashed Potatoes</span></label>
+                                    <label><input name="meal" type="checkbox" value="Baked Beans" required><span>Baked Beans</span></label>
+                                    <label><input name="meal" type="checkbox" value="Pop" required><span>Pop</span></label>
+                                    <label><input name="meal" type="checkbox" value="Beer" required><span>Beer</span></label>
+                                    <label><input name="meal" type="checkbox" value="Wine" required><span>Wine</span></label>
+                                </div>
+                            </div>
+
 
                             <!-- Comments -->
                             <div class="gi gi-m-6 gi-offset-m-3">

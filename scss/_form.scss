@@ -52,13 +52,16 @@ input[type=submit] {
 
     .attending-options,
     .guest-attending-options,
-    .shuttle-options {
+    .shuttle-options,
+    .meal-options {
         input {
             display: none;
         }
 
-        label:first-of-type span {
-            margin-right: 1rem;
+        label {
+            &:not(:last-of-type) {
+                margin-right: 1rem;
+            }
         }
 
         span {
@@ -77,9 +80,27 @@ input[type=submit] {
         }
 
         input:checked + span {
-            opacity: 1;
-            background: $primary;
             color: $white;
+            background: $primary;
+            opacity: 1;
+        }
+    }
+
+    .meal-options {
+        label {
+            margin: 0 !important;
+        }
+
+        span {
+            padding: 0.25rem 0.5rem;
+            border: 0;
+        }
+
+        input:checked + span {
+            color: $primary;
+            background: transparent;
+            opacity: 1;
+            text-decoration: underline;
         }
     }
 }
