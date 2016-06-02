@@ -3,6 +3,11 @@
 h1, h2, h3,
 h4, h5, h6 {
     font-family: $font-thin;
+    font-weight: normal;
+
+    span {
+        font-weight: bold;
+    }
 }
 
 
@@ -15,6 +20,10 @@ h4, h5, h6 {
 
     span {
         font-weight: bold;
+
+        &.condense {
+            font-weight: normal;
+            letter-spacing: -8px;
+        }
     }
-    // text-transform: uppercase;
 }

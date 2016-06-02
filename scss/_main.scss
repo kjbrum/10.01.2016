@@ -106,7 +106,13 @@ img {
 }
 
 .section--hero {
-    background: url(../img/cover.jpg) no-repeat center center;
+    position: relative;
+    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/t31.0-8/11401299_10204395367630742_7783568592802660937_o.jpg);
+    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11694748_975046785879320_6427414416722992249_n.jpg?oh=1fa82357075cbf5a409faea629aa9c56&oe=57DB1B7E);
+    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/t31.0-8/11155094_3037507414712_8954382551914832142_o.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
     background-size: cover;
     min-height: 800px;
     min-height: 100vh;
@@ -126,18 +132,14 @@ img {
         line-height: 1;
         letter-spacing: 10px;
         text-transform: uppercase;
-
-        span {
-            font-weight: normal;
-        }
     }
 
-    h2 {
-        font-size: 2.5rem;
-        font-size: 3vw;
-        font-weight: normal;
-        color: $secondary-light;
-    }
+    // h2 {
+    //     font-size: 2.5rem;
+    //     font-size: 3vw;
+    //     font-weight: normal;
+    //     color: $secondary-light;
+    // }
 }
 
 .section--countdown {
@@ -203,7 +205,6 @@ img {
             display: block;
             color: $primary;
             font-size: 1.75rem;
-            font-weight: bold;
             text-transform: uppercase;
         }
     }
@@ -219,7 +220,6 @@ img {
             display: block;
             font-family: $font-special;
             font-size: 1.5rem;
-            font-weight: normal;
         }
     }
 
@@ -242,6 +242,10 @@ img {
 }
 
 .section--timeline {
+    svg {
+        height: 100px;
+    }
+
     h4 {
         margin-bottom: 0;
     }
