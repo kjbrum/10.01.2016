@@ -1,6 +1,6 @@
 (function($) {
     // Display the countdown
-    $('.countdown').countdown('2016/10/01', { elapse: true })
+    $('.countdown').countdown('10/01/2016 15:00:00', { elapse: true })
         .on('update.countdown', function(event) {
             var $this = $(this);
             var format = '<div class="g g-s-2 g-m-4"><div class="gi days"><div class="block"><span class="number">%D</span><span class="suffix">days</span></div></div><div class="gi hours"><div class="block"><span class="number">%H</span><span class="suffix">hours</span></div></div><div class="gi minutes"><div class="block"><span class="number">%M</span><span class="suffix">minutes</span></div></div><div class="gi seconds"><div class="block"><span class="number">%S</span><span class="suffix">seconds</span></div></div></div>';
