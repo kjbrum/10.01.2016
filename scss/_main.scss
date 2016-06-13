@@ -42,13 +42,13 @@ img {
 }
 
 ::selection {
-    background: $white;
-    color: $secondary;
+    background: $primary;
+    color: $white;
 }
 
 ::-moz-selection {
-    background: $white;
-    color: $secondary;
+    background: $primary;
+    color: $white;
 }
 
 // Sections
@@ -107,9 +107,7 @@ img {
 
 .section--hero {
     position: relative;
-    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/t31.0-8/11401299_10204395367630742_7783568592802660937_o.jpg);
-    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11694748_975046785879320_6427414416722992249_n.jpg?oh=1fa82357075cbf5a409faea629aa9c56&oe=57DB1B7E);
-    background-image: url(https://scontent-ord1-1.xx.fbcdn.net/t31.0-8/11155094_3037507414712_8954382551914832142_o.jpg);
+    background-image: url(../img/engagement-hipsters.jpg);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-attachment: fixed;
