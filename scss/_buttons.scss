@@ -19,7 +19,6 @@
 	&:hover,
 	&:focus {
 		color: $primary-light;
-		// background: $primary;
 		border-color: $primary-light;
 	}
 
@@ -42,4 +41,20 @@
 .btn-block {
 	display: block;
 	width: 100%;
+}
+
+.btn-rsvp {
+    display: block;
+    background: $primary;
+    color: $white;
+    border: none;
+    font-size: 4rem;
+    padding: 5rem 0;
+    font-family: $font-special;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background: $primary-light;
+    }
 }
