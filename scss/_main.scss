@@ -211,7 +211,10 @@ img {
         display: inline-block !important;
         border: 5px solid $primary;
         border-radius: 100%;
-        max-width: 250px;
+
+        @media (min-width: $bp-xs) {
+            max-width: 300px;
+        }
     }
 
     h4 {
