@@ -295,6 +295,23 @@ img {
     min-height: 50vh;
 }
 
+.section--registry {
+    a {
+        display: block;
+        transform: translateY(0);
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    img {
+        margin: 0 auto;
+        max-height: 150px;
+    }
+}
+
 .section--rsvp {
 
 }
