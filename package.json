@@ -1,7 +1,7 @@
 {
   "name": "10.01.2016",
   "version": "1.0.0",
-  "description": "Laura and Kyle are getting married!",
+  "description": "Kyle and Laura are getting married!",
   "scripts": {
     "browsersync": "browser-sync start --server --files 'css/style.css, js/*.min.js, **/*.html'",
     "build": "npm run js:build && npm run css:build",
