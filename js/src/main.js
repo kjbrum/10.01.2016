@@ -91,4 +91,26 @@
         });
     });
 
+    // Initialize Scroll Reveal
+    window.sr = ScrollReveal({
+        distance: '50px',
+        viewFactor: 0.75,
+        scale: 1,
+        duration: 1000
+    });
+
+    sr.reveal('.section--couple .gi');
+
+    sr.reveal('.section--wedding-party .bridesmaids .gi', { origin: 'right' }, 250);
+    sr.reveal('.section--wedding-party .groomsmen .gi', { origin: 'right' }, 250);
+    sr.reveal('.section--wedding-party .honorable .gi', { origin: 'right' }, 250);
+
+    sr.reveal('.section--festivities .ceremony', { origin: 'left' });
+    sr.reveal('.section--festivities .cocktail');
+    sr.reveal('.section--festivities .reception', { origin: 'right' });
+
+    sr.reveal('.section--accommodations .lodging', { origin: 'left' });
+    sr.reveal('.section--accommodations .transportation', { origin: 'right' });
+
+    sr.reveal('.section--registry .gi', 250);
 })(jQuery);
