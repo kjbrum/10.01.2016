@@ -1,4 +1,21 @@
 (function($) {
+    // Serialize an object
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
     // Display the countdown
     $('.countdown').countdown('10/01/2016 15:00:00', { elapse: true })
         .on('update.countdown', function(event) {
@@ -42,5 +59,36 @@
         // Textarea fields
         $('textarea[name=comments], textarea[name=regrets]').val('');
     }
+
+    /**
+     *  Handle submitting the RSVP form to Formspree
+     */
+    $('.rsvp-form').submit(function(e) {
+        e.preventDefault();
+
+        var form_data = $(this).serializeObject();
+        console.log(form_data);
+
+        $.ajax({
+            url: "https://formspree.io/kjbrumm@gmail.com",
+            method: "POST",
+            data: form_data,
+            dataType: "json"
+        }).done(function(data) {
+            if(data.success) {
+                // Hide the form
+                $('.rsvp-form').hide();
+
+                // Display the correct message
+                if(form_data.attending == 'accept') {
+                    console.log('attending :)');
+                    $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
+                } else {
+                    console.log('butthead :(');
+                    $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
+                }
+            }
+        });
+    });
 
 })(jQuery);
