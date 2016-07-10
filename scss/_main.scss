@@ -278,6 +278,10 @@ img {
         margin: 1.5rem 0 0.5rem;
         font-size: 1.2rem;
     }
+
+    a {
+        margin-top: 0.5rem;
+    }
 }
 
 .section--festivities {
@@ -288,9 +292,11 @@ img {
     h4 {
         margin-bottom: 0;
     }
+}
 
-    .location {
-        margin-bottom: 0.5rem;
+.section--accommodations {
+    ul {
+        margin-top: 0.5rem;
     }
 }
 
