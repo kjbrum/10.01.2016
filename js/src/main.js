@@ -91,6 +91,14 @@
         });
     });
 
+    $('#rsvp-form').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if(keyCode === 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
     // Initialize Scroll Reveal
     window.sr = ScrollReveal({
         distance: '50px',
