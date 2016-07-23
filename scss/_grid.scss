@@ -75,13 +75,15 @@
 }
 
 // Table grid
-.g-table {
-    display: table;
+@media (min-width: $bp-s) {
+    .g-table {
+        display: table;
 
-    > .gi {
-        display: table-cell;
-        float: none !important;
-        vertical-align: middle;
+        > .gi {
+            display: table-cell;
+            float: none !important;
+            vertical-align: middle;
+        }
     }
 }
 

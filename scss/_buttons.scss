@@ -16,8 +16,7 @@
     background: transparent;
     text-transform: uppercase;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		color: $primary-light;
 		border-color: $primary-light;
 	}
@@ -52,8 +51,7 @@
     padding: 5rem 0;
     font-family: $font-special;
 
-    &:hover,
-    &:focus {
+    &:hover {
         color: $white;
         background: $primary-light;
     }
