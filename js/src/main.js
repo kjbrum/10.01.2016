@@ -134,4 +134,8 @@
             });
         }
     }
+
+    // Initialize Google Maps
+    // API Key: AIzaSyCVhmitMV-zqs6G9DYTMPPc-1bC2UBBL3g
+
 })(jQuery);

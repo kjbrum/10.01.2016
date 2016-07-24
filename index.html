@@ -448,14 +448,83 @@
         </section>
 
 
+        <!-- Map Section -->
+        <div id="map" class="section--map"></div>
+
+
         <!-- Footer -->
-<!--         <footer class="footer">
+        <!-- <footer class="footer">
             <div class="container">
                 <p><i class="shake shake-constant fa fa-heart"></i></p>
             </div>
-        </footer>
- -->
+        </footer> -->
+
         <!-- JavaScript -->
+        <script>
+            function initMap() {
+                // Create our map
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {
+                        lat: 41.8352627,
+                        lng: -91.3164834
+                    },
+                    scrollwheel: false,
+                    zoom: 10,
+                    styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+                });
+
+                // Ceremony Marker
+                var ceremony_popup_content =
+                    '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+                        '<div id="bodyContent">'+
+                            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                            'sandstone rock formation in the southern part of the '+
+                            'Northern Territory, central Australia.</p>'+
+                        '</div>'+
+                    '</div>';
+
+                var ceremony_popup = new google.maps.InfoWindow({
+                    content: ceremony_popup_content,
+                    maxWidth: 200
+                });
+                var ceremony_marker = new google.maps.Marker({
+                    map: map,
+                    position: {
+                        lat: 41.7996362,
+                        lng: -91.5687431
+                    },
+                    title: 'Ceremony'
+                });
+                ceremony_marker.addListener('click', function() {
+                    ceremony_popup.open(map, ceremony_marker);
+                });
+
+                // Reception Marker
+                var reception_marker = new google.maps.Marker({
+                    map: map,
+                    position: {
+                        lat: 41.8299802,
+                        lng: -91.0304246
+                    },
+                    title: 'Reception'
+                });
+
+                // Hotel Marker
+                var hotel_marker = new google.maps.Marker({
+                    map: map,
+                    position: {
+                        lat: 41.9139235,
+                        lng: -91.4249694
+                    },
+                    title: 'Hotel'
+                });
+            }
+        </script>
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVhmitMV-zqs6G9DYTMPPc-1bC2UBBL3g&callback=initMap" async defer></script>
         <script src="./js/main.min.js"></script>
     </body>
 </html>
