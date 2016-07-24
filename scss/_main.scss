@@ -136,11 +136,14 @@ img {
     background-image: url(../img/engagement-hipsters.jpg);
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-attachment: fixed;
     background-size: cover;
     min-height: 800px;
     min-height: 100vh;
     color: $white;
+
+    @media (min-width: $bp-m) {
+        background-attachment: fixed;
+    }
 
     .centerer {
         position: absolute;
@@ -313,10 +316,13 @@ img {
     position: relative;
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-attachment: fixed;
     background-size: cover;
     min-height: 400px;
     min-height: 50vh;
+
+    @media (min-width: $bp-m) {
+        background-attachment: fixed;
+    }
 }
 
 .section--registry {

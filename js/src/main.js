@@ -124,11 +124,14 @@
 
 
     // Initialize Parallax
-    var parallax = document.querySelectorAll('.section--parallax');
+    var parallax_el = document.querySelectorAll('.section--parallax');
     var speed = 0.25;
-    window.onscroll = function() {
-        [].slice.call(parallax).forEach(function(el,i){
-            el.style.backgroundPosition = 'center ' + (-(window.pageYOffset - el.offsetTop) * speed) + 'px';
-        });
-    };
+
+    if(window.innerWidth > 1024) {
+        window.onscroll = function() {
+            [].slice.call(parallax_el).forEach(function(el,i){
+                el.style.backgroundPosition = 'center ' + (-(window.pageYOffset - el.offsetTop) * speed) + 'px';
+            });
+        }
+    }
 })(jQuery);
