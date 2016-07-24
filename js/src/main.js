@@ -22,9 +22,9 @@
             var $this = $(this);
             var format = '<div class="g g-xxs-2 g-m-4"><div class="gi days"><div class="block"><span class="number">%D</span><span class="suffix">days</span></div></div><div class="gi hours"><div class="block"><span class="number">%H</span><span class="suffix">hours</span></div></div><div class="gi minutes"><div class="block"><span class="number">%M</span><span class="suffix">minutes</span></div></div><div class="gi seconds"><div class="block"><span class="number">%S</span><span class="suffix">seconds</span></div></div></div>';
             if (event.elapsed) {
-                $this.html(event.strftime('<h3 class="heading">Happily <span>Married</span></h3>'+format));
+                $this.html(event.strftime('<h3 class="heading">Happily <span>Married</span> for...</h3>'+format));
             } else {
-                $this.html(event.strftime('<h3 class="heading">Time to <span>Wait</span></h3>'+format));
+                $this.html(event.strftime('<h3 class="heading">Getting <span>Married</span> in...</h3>'+format));
             }
         });
 
