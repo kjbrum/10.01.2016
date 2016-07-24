@@ -78,6 +78,7 @@
 @media (min-width: $bp-s) {
     .g-table {
         display: table;
+        width: 100%;
 
         > .gi {
             display: table-cell;
