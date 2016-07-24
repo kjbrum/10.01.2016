@@ -28,6 +28,7 @@
             }
         });
 
+    // Handle RSVP form fields
     $('input[name=attending]').change(function() {
         resetFields();
 
@@ -60,9 +61,7 @@
         $('textarea[name=comments], textarea[name=regrets]').val('');
     }
 
-    /**
-     *  Handle submitting the RSVP form to Formspree
-     */
+    // Handle submitting the RSVP form to Formspree
     $('.rsvp-form').submit(function(e) {
         e.preventDefault();
 
@@ -99,6 +98,7 @@
         }
     });
 
+
     // Initialize Scroll Reveal
     window.sr = ScrollReveal({
         distance: '50px',
@@ -121,4 +121,14 @@
     sr.reveal('.section--accommodations .transportation', { origin: 'right' });
 
     sr.reveal('.section--registry .gi', 250);
+
+
+    // Initialize Parallax
+    var parallax = document.querySelectorAll('.section--parallax');
+    var speed = 0.25;
+    window.onscroll = function() {
+        [].slice.call(parallax).forEach(function(el,i){
+            el.style.backgroundPosition = 'center ' + (-(window.pageYOffset - el.offsetTop) * speed) + 'px';
+        });
+    };
 })(jQuery);
