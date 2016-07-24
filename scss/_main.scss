@@ -277,11 +277,6 @@ img {
 
 .section--festivities,
 .section--accommodations {
-    img {
-        margin: 0 auto;
-        border-radius: 100%;
-    }
-
     h4 {
         margin: 1.5rem 0 0.5rem;
         font-size: 1.2rem;
@@ -303,6 +298,11 @@ img {
 }
 
 .section--accommodations {
+    svg {
+        height: 100px;
+        fill: #503D51;
+    }
+
     ul {
         margin-top: 0.5rem;
     }
