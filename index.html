@@ -52,6 +52,7 @@
             </div>
         </section>
 
+
         <!-- Countdown Section -->
         <section class="section section--countdown">
             <div class="container">
@@ -59,7 +60,8 @@
             </div>
         </section>
 
-        <!-- The Couple Section -->
+
+        <!-- Bride and Groom Section -->
         <section class="section section--dark-secondary section--couple">
             <div class="container">
                 <h3 class="heading"><span>Bride</span> and Groom</h3>
@@ -78,7 +80,8 @@
             </div>
         </section>
 
-        <!-- The Wedding Party Section -->
+
+        <!-- Wedding Party Section -->
         <section class="section section--alt section--wedding-party">
             <div class="container">
                 <h3 class="heading">Meet the <span>Wedding Party</span></h3>
@@ -168,7 +171,8 @@
             </div>
         </section>
 
-        <!-- The Where's it Happening Section -->
+
+        <!-- Festivities Section -->
         <section class="section section--light section--overlay section--festivities">
             <div class="container">
                 <h3 class="heading"><span>Festivities</span></h3>
@@ -200,6 +204,11 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Map Section -->
+        <div id="map" class="section--map"></div>
+
 
         <!-- The Accomodations Section -->
         <section class="section section--accommodations">
@@ -447,10 +456,6 @@
         </section>
 
 
-        <!-- Map Section -->
-        <div id="map" class="section--map"></div>
-
-
         <!-- Footer -->
         <!-- <footer class="footer">
             <div class="container">
@@ -473,22 +478,6 @@
                 });
 
                 // Ceremony Marker
-                var ceremony_popup_content =
-                    '<div id="content">'+
-                        '<div id="siteNotice">'+
-                        '</div>'+
-                        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-                        '<div id="bodyContent">'+
-                            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                            'sandstone rock formation in the southern part of the '+
-                            'Northern Territory, central Australia.</p>'+
-                        '</div>'+
-                    '</div>';
-
-                var ceremony_popup = new google.maps.InfoWindow({
-                    content: ceremony_popup_content,
-                    maxWidth: 200
-                });
                 var ceremony_marker = new google.maps.Marker({
                     map: map,
                     position: {
@@ -496,6 +485,19 @@
                         lng: -91.5687431
                     },
                     title: 'Ceremony'
+                });
+                var ceremony_popup_content =
+                    '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Ceremony</h1>'+
+                        '<div id="bodyContent">'+
+                            '<p>Lake Macbride Main Lodge<br>3:00pm</p>'+
+                        '</div>'+
+                    '</div>';
+                var ceremony_popup = new google.maps.InfoWindow({
+                    content: ceremony_popup_content,
+                    maxWidth: 200
                 });
                 ceremony_marker.addListener('click', function() {
                     ceremony_popup.open(map, ceremony_marker);
@@ -510,6 +512,22 @@
                     },
                     title: 'Reception'
                 });
+                var reception_popup_content =
+                    '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Reception</h1>'+
+                        '<div id="bodyContent">'+
+                            '<p>The Heckman Acreage<br>6:30pm</p>'+
+                        '</div>'+
+                    '</div>';
+                var reception_popup = new google.maps.InfoWindow({
+                    content: reception_popup_content,
+                    maxWidth: 200
+                });
+                reception_marker.addListener('click', function() {
+                    reception_popup.open(map, reception_marker);
+                });
 
                 // Hotel Marker
                 var hotel_marker = new google.maps.Marker({
@@ -519,6 +537,22 @@
                         lng: -91.4249694
                     },
                     title: 'Hotel'
+                });
+                var hotel_popup_content =
+                    '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Hotel</h1>'+
+                        '<div id="bodyContent">'+
+                            '<p>Sleep Inn & Suites<br>Virgil Ave<br>Mt Vernon, IA 52314</p>'+
+                        '</div>'+
+                    '</div>';
+                var hotel_popup = new google.maps.InfoWindow({
+                    content: hotel_popup_content,
+                    maxWidth: 200
+                });
+                hotel_marker.addListener('click', function() {
+                    hotel_popup.open(map, hotel_marker);
                 });
             }
         </script>

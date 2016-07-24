@@ -127,6 +127,7 @@
     var parallax_el = document.querySelectorAll('.section--parallax');
     var speed = 0.25;
 
+    // Disable if we are on a smaller screen
     if(window.innerWidth > 1024) {
         window.onscroll = function() {
             [].slice.call(parallax_el).forEach(function(el,i){
@@ -134,8 +135,4 @@
             });
         }
     }
-
-    // Initialize Google Maps
-    // API Key: AIzaSyCVhmitMV-zqs6G9DYTMPPc-1bC2UBBL3g
-
 })(jQuery);
