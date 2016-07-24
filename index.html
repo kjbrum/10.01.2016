@@ -496,8 +496,7 @@
                         '</div>'+
                     '</div>';
                 var ceremony_popup = new google.maps.InfoWindow({
-                    content: ceremony_popup_content,
-                    maxWidth: 200
+                    content: ceremony_popup_content
                 });
                 ceremony_marker.addListener('click', function() {
                     ceremony_popup.open(map, ceremony_marker);
@@ -522,8 +521,7 @@
                         '</div>'+
                     '</div>';
                 var reception_popup = new google.maps.InfoWindow({
-                    content: reception_popup_content,
-                    maxWidth: 200
+                    content: reception_popup_content
                 });
                 reception_marker.addListener('click', function() {
                     reception_popup.open(map, reception_marker);
@@ -544,12 +542,11 @@
                         '</div>'+
                         '<h1 id="firstHeading" class="firstHeading">Hotel</h1>'+
                         '<div id="bodyContent">'+
-                            '<p>Sleep Inn & Suites<br>Virgil Ave<br>Mt Vernon, IA 52314</p>'+
+                            '<p>Sleep Inn & Suites</p>'+
                         '</div>'+
                     '</div>';
                 var hotel_popup = new google.maps.InfoWindow({
-                    content: hotel_popup_content,
-                    maxWidth: 200
+                    content: hotel_popup_content
                 });
                 hotel_marker.addListener('click', function() {
                     hotel_popup.open(map, hotel_marker);
