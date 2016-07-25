@@ -1,3 +1,33 @@
+var markers = [];
+var marker = [];
+
+var locations = [
+    {
+        position: {
+            lat: 41.7996127,
+            lng: -91.5666657
+        },
+        title: 'ceremony',
+        icon_url: './img/icons/map-ceremony.png'
+    },
+    {
+        position: {
+            lat: 41.8300431,
+            lng: -91.0283526
+        },
+        title: 'reception',
+        icon_url: './img/icons/map-reception.png'
+    },
+    {
+        position: {
+            lat: 41.9138846,
+            lng: -91.4228095
+        },
+        title: 'hotel',
+        icon_url: './img/icons/map-hotel.png'
+    }
+];
+
 function initMap() {
     // Create our map
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -12,91 +42,48 @@ function initMap() {
         draggable: !("ontouchend" in document),
         styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
     });
+}
 
-    // Ceremony Marker
-    var ceremony_marker = new google.maps.Marker({
-        map: map,
-        position: {
-            lat: 41.7996127,
-            lng: -91.5666657
-        },
-        title: 'Ceremony',
-        icon: {
-            url: './img/icons/map-rings.png',
-            scaledSize: new google.maps.Size(50,50)
-        }
-    });
-    var ceremony_popup_content =
-        '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Ceremony</h1>'+
-            '<div id="bodyContent">'+
-                '<p>Lake Macbride Main Lodge<br>3:00pm</p>'+
-            '</div>'+
-        '</div>';
-    var ceremony_popup = new google.maps.InfoWindow({
-        content: ceremony_popup_content
-    });
-    ceremony_marker.addListener('click', function() {
-        ceremony_popup.open(map, ceremony_marker);
-    });
+// Add the map markers
+function addMarkers() {
+    for (var x = locations.length - 1; x >= 0; x--) {
+        var title = locations[x].title;
 
-    // Reception Marker
-    var reception_marker = new google.maps.Marker({
-        map: map,
-        position: {
-            lat: 41.8300431,
-            lng: -91.0283526
-        },
-        title: 'Reception',
-        icon: {
-            url: './img/icons/map-glasses.png',
-            scaledSize: new google.maps.Size(50,50)
-        }
-    });
-    var reception_popup_content =
-        '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Reception</h1>'+
-            '<div id="bodyContent">'+
-                '<p>The Heckman Acreage<br>6:30pm</p>'+
-            '</div>'+
-        '</div>';
-    var reception_popup = new google.maps.InfoWindow({
-        content: reception_popup_content
-    });
-    reception_marker.addListener('click', function() {
-        reception_popup.open(map, reception_marker);
-    });
+        // Create the marker
+        marker[title] = new google.maps.Marker({
+            map: map,
+            position: locations[x].position,
+            title: title,
+            icon: {
+                url: locations[x].icon_url,
+                scaledSize: new google.maps.Size(50,50)
+            }
+        });
 
-    // Hotel Marker
-    var hotel_marker = new google.maps.Marker({
-        map: map,
-        position: {
-            lat: 41.9138846,
-            lng: -91.4228095
-        },
-        title: 'Hotel',
-        icon: {
-            url: './img/icons/map-bed.png',
-            scaledSize: new google.maps.Size(50,50)
+        // Add the click event
+        marker[title].addListener('click', function() {
+            updateIcons(this.getTitle());
+        });
+    }
+}
+
+// Update the marker icons
+function updateIcons(title) {
+    // Reset all the icons
+    for (var x = locations.length - 1; x >= 0; x--) {
+        var marker_title = locations[x].title;
+
+        if (title != marker_title) {
+            marker[marker_title].setIcon({
+                url: './img/icons/map-'+marker_title+'.png',
+                scaledSize: new google.maps.Size(50,50)
+            });
         }
-    });
-    var hotel_popup_content =
-        '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Hotel</h1>'+
-            '<div id="bodyContent">'+
-                '<p>Sleep Inn & Suites</p>'+
-            '</div>'+
-        '</div>';
-    var hotel_popup = new google.maps.InfoWindow({
-        content: hotel_popup_content
-    });
-    hotel_marker.addListener('click', function() {
-        hotel_popup.open(map, hotel_marker);
+    }
+
+    // Set the active icon
+    marker[title].setIcon({
+        url: './img/icons/map-'+title+'-active.png',
+        scaledSize: new google.maps.Size(50,50)
     });
 }
