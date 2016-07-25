@@ -66,28 +66,52 @@
         e.preventDefault();
 
         var form_data = $(this).serializeObject();
-        console.log(form_data);
 
-        $.ajax({
-            url: "https://formspree.io/kjbrumm@gmail.com",
-            method: "POST",
-            data: form_data,
-            dataType: "json"
-        }).done(function(data) {
-            if(data.success) {
-                // Hide the form
-                $('.rsvp-form').hide();
+        var submit = true;
+        // if (($("input[name='attend']").is(':checked')) && (attending == 'yes') && (!$("input[name='guest']").is(':checked'))) {
+        //         val_err_msg += '<li>Please select if you are bringing a guest.</li>';
+        //         submit = false;
+        // }
 
-                // Display the correct message
-                if(form_data.attending == 'accept') {
-                    console.log('attending :)');
-                    $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
-                } else {
-                    console.log('butthead :(');
-                    $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
+        // if (!$("input[name='attend']").is(':checked')) {
+        //     val_err_msg += '<li>Please select whether or not you will be attending.</li>';
+        //      submit = false;
+        // }
+
+        // if (!$.trim($('#rsvp_form input[name=first_name]').val())) {
+        //     $('#rsvp_form input[name=first_name]').addClass('error');
+        //     val_err_msg += '<li>Please enter your First Name</li>';
+        //     submit = false;
+        // }
+
+        // if (!$.trim($('#rsvp_form input[name=last_name]').val())) {
+        //     $('#rsvp_form input[name=last_name]').addClass('error');
+        //     val_err_msg += '<li>Please enter your Last Name.</li>';
+        //     submit = false;
+        // }
+
+        if (submit !== false) {
+            $.ajax({
+                url: $('.rsvp-form').attr('action'),
+                method: "POST",
+                data: form_data,
+                dataType: "json"
+            }).done(function(data) {
+                if(data.success) {
+                    // Hide the form
+                    $('.rsvp-form').hide();
+
+                    // Display the correct message
+                    if(form_data.attending == 'accept') {
+                        console.log('attending :)');
+                        $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
+                    } else {
+                        console.log('butthead :(');
+                        $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 
     $('#rsvp-form').on('keyup keypress', function(e) {
