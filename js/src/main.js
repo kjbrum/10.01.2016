@@ -145,26 +145,26 @@
 
         console.log('submit form: '+submit.send);
         if (submit.send !== false) {
-            // $.ajax({
-            //     url: $('.rsvp-form').attr('action'),
-            //     method: "POST",
-            //     data: form_data,
-            //     dataType: "json"
-            // }).done(function(data) {
-            //     if(data.success) {
-            //         // Hide the form
-            //         $('.rsvp-form').hide();
+            $.ajax({
+                url: $('.rsvp-form').attr('action'),
+                method: "POST",
+                data: form_data,
+                dataType: "json"
+            }).done(function(data) {
+                if(data.success) {
+                    // Hide the form
+                    $('.rsvp-form').hide();
 
-            //         // Display the correct message
-            //         if(form_data.attending == 'accept') {
-            //             console.log('attending :)');
-            //             $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
-            //         } else {
-            //             console.log('butthead :(');
-            //             $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
-            //         }
-            //     }
-            // });
+                    // Display the correct message
+                    if(form_data.attending == 'accept') {
+                        console.log('Attending! Yay :)');
+                        $('.rsvp-form-notice').html('Thanks for RSVPing!<br>We are excited to celebrate our big day with you!').fadeIn();
+                    } else {
+                        console.log('Not attending. Butthead :(');
+                        $('.rsvp-form-notice').html('Thanks for RSVPing!<br>Sorry to see you won\'t be joining us... :(').fadeIn();
+                    }
+                }
+            });
         } else {
             // Display the form errors
             $('.form-errors').html(submit.errors).slideDown();
