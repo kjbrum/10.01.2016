@@ -66,7 +66,6 @@
     var validateFields = function(fields) {
         var submit = true;
         var error_msgs = '';
-        console.log(fields);
 
         // Attending
         var is_attending = ((fields.attending) && (fields.attending == 'accept'));
@@ -140,10 +139,10 @@
     $('.rsvp-form').submit(function(e) {
         e.preventDefault();
 
+        // Serialize form data
         var form_data = $(this).serializeObject();
         var submit = validateFields(form_data);
 
-        console.log('submit form: '+submit.send);
         if (submit.send !== false) {
             $.ajax({
                 url: $('.rsvp-form').attr('action'),
