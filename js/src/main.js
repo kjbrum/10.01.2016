@@ -50,6 +50,7 @@
         }
     });
 
+    // Reset the form fields
     var resetFields = function() {
         // Text fields
         $('input[name=email], input[name=guests_first_name], input[name=guests_last_name], input[name=guests_email]').val('');
@@ -61,59 +62,121 @@
         $('textarea[name=comments], textarea[name=regrets]').val('');
     }
 
+    // Validate the RSVP form fields
+    var validateFields = function(fields) {
+        var submit = true;
+        var error_msgs = '';
+        console.log(fields);
+
+        // Attending
+        var is_attending = ((fields.attending) && (fields.attending == 'accept'));
+        if (!(fields.attending)) {
+            error_msgs += '<li>Let us know if you will be attending or not.</li>';
+            submit = false;
+        }
+
+        // First Name
+        if (!fields.first_name) {
+            error_msgs += '<li>Enter your first name.</li>';
+            submit = false;
+        }
+
+        // Last Name
+        if (!fields.last_name) {
+            error_msgs += '<li>Enter your last name.</li>';
+            submit = false;
+        }
+
+        // Email
+        if (is_attending && (!fields.email)) {
+            error_msgs += '<li>Enter your email.</li>';
+            submit = false;
+        }
+
+        // Shuttle service
+        if (is_attending && (!fields.shuttle)) {
+            error_msgs += '<li>Let us know if you will be using the shuttle service.</li>';
+            submit = false;
+        }
+
+        // Main dish
+        if (is_attending && (!fields.meal)) {
+            error_msgs += '<li>Choose your main dish.</li>';
+            submit = false;
+        }
+
+        // Guest attending
+        var is_guest_attending = (fields.guest_attending) && (fields.guest_attending == 'yes');
+        if (is_attending && (!fields.guest_attending)) {
+            error_msgs += '<li>Let us know if you will be bringing a guest.</li>';
+            submit = false;
+        }
+
+        // Guest first name
+        if (is_guest_attending && (!fields.guests_first_name)) {
+            error_msgs += '<li>Enter your guest\'s first name.</li>';
+            submit = false;
+        }
+
+        // Guest last name
+        if (is_guest_attending && (!fields.guests_last_name)) {
+            error_msgs += '<li>Enter your guest\'s last name.</li>';
+            submit = false;
+        }
+
+        // Guest main dish
+        if (is_guest_attending && (!fields.guests_meal)) {
+            error_msgs += '<li>Choose your guest\'s main dish.</li>';
+            submit = false;
+        }
+
+        return {
+            send: submit,
+            errors: error_msgs
+        };
+    }
+
     // Handle submitting the RSVP form to Formspree
     $('.rsvp-form').submit(function(e) {
         e.preventDefault();
 
         var form_data = $(this).serializeObject();
+        var submit = validateFields(form_data);
 
-        var submit = true;
-        // if (($("input[name='attend']").is(':checked')) && (attending == 'yes') && (!$("input[name='guest']").is(':checked'))) {
-        //         val_err_msg += '<li>Please select if you are bringing a guest.</li>';
-        //         submit = false;
-        // }
+        console.log('submit form: '+submit.send);
+        if (submit.send !== false) {
+            // $.ajax({
+            //     url: $('.rsvp-form').attr('action'),
+            //     method: "POST",
+            //     data: form_data,
+            //     dataType: "json"
+            // }).done(function(data) {
+            //     if(data.success) {
+            //         // Hide the form
+            //         $('.rsvp-form').hide();
 
-        // if (!$("input[name='attend']").is(':checked')) {
-        //     val_err_msg += '<li>Please select whether or not you will be attending.</li>';
-        //      submit = false;
-        // }
+            //         // Display the correct message
+            //         if(form_data.attending == 'accept') {
+            //             console.log('attending :)');
+            //             $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
+            //         } else {
+            //             console.log('butthead :(');
+            //             $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
+            //         }
+            //     }
+            // });
+        } else {
+            // Display the form errors
+            $('.form-errors').html(submit.errors).slideDown();
 
-        // if (!$.trim($('#rsvp_form input[name=first_name]').val())) {
-        //     $('#rsvp_form input[name=first_name]').addClass('error');
-        //     val_err_msg += '<li>Please enter your First Name</li>';
-        //     submit = false;
-        // }
-
-        // if (!$.trim($('#rsvp_form input[name=last_name]').val())) {
-        //     $('#rsvp_form input[name=last_name]').addClass('error');
-        //     val_err_msg += '<li>Please enter your Last Name.</li>';
-        //     submit = false;
-        // }
-
-        if (submit !== false) {
-            $.ajax({
-                url: $('.rsvp-form').attr('action'),
-                method: "POST",
-                data: form_data,
-                dataType: "json"
-            }).done(function(data) {
-                if(data.success) {
-                    // Hide the form
-                    $('.rsvp-form').hide();
-
-                    // Display the correct message
-                    if(form_data.attending == 'accept') {
-                        console.log('attending :)');
-                        $('.rsvp-form-notice').text('Thanks for RSVPing! We are excited to celebrate our big day with you!').fadeIn();
-                    } else {
-                        console.log('butthead :(');
-                        $('.rsvp-form-notice').text('Thanks for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
-                    }
-                }
-            });
+            // Scroll to the top of the section
+            $('html, body').animate({
+                scrollTop: $('#rsvp').offset().top
+            }, 500);
         }
     });
 
+    // Disable enter to submit RSVP
     $('#rsvp-form').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if(keyCode === 13) {

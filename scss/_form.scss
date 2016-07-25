@@ -119,3 +119,10 @@ input[type=submit] {
 .rsvp-form-notice {
     display: none;
 }
+
+.form-errors {
+    display: none;
+    padding: 1rem;
+    color: $error;
+    border: 1px solid $error;
+}

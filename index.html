@@ -285,13 +285,19 @@
 
 
         <!-- The RSVP Section -->
-        <section class="section section--alt section--rsvp">
+        <section id="rsvp" class="section section--alt section--rsvp">
             <div class="container">
                 <h3 class="heading"><span>RSVP</span></h3>
 
+
                 <form name="rsvp-form" id="rsvp-form" class="rsvp-form" action="https://formspree.io/kjbrumm@gmail.com">
+                    <!-- Form Errors -->
+                    <div class="gi gi-np gi-m-6 gi-offset-m-3">
+                        <ul class="form-errors"></ul>
+                    </div>
+
                     <div class="g">
-                        <!-- Attending? -->
+                        <!-- Attending -->
                         <div class="gi gi-m-6 gi-offset-m-3">
                             <p class="description">Will you be attending?</p>
 
@@ -366,7 +372,7 @@
                                 <hr>
                             </div>
 
-                            <!-- Guest Attending? -->
+                            <!-- Guest Attending -->
                             <div class="gi gi-m-6 gi-offset-m-3">
                                 <p class="description">Will you be bringing a guest/spouse?</p>
 
