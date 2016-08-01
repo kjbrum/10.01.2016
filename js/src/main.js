@@ -157,10 +157,10 @@
                     // Display the correct message
                     if(form_data.attending == 'accept') {
                         console.log('Attending! Yay :)');
-                        $('.rsvp-form-notice').html('Thanks for RSVPing!<br>We are excited to celebrate our big day with you!').fadeIn();
+                        $('.rsvp-form-notice').html('Thank you for RSVPing! We are excited to celebrate our big day with you!<br><strong>Attire:</strong> Casual. Please no jeans, but no suit necessary.<br>Please respect our wishes for a child free occasion.').fadeIn();
                     } else {
                         console.log('Not attending. Butthead :(');
-                        $('.rsvp-form-notice').html('Thanks for RSVPing!<br>Sorry to see you won\'t be joining us... :(').fadeIn();
+                        $('.rsvp-form-notice').html('Thank you for RSVPing! Sorry to see you won\'t be joining us... :(').fadeIn();
                     }
                 }
             });
