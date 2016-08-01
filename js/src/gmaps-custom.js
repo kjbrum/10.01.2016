@@ -64,9 +64,9 @@ function addMarkers() {
         });
 
         // Add the click event
-        marker[title].addListener('click', function() {
-            updateIcons(this.getTitle());
-        });
+        // marker[title].addListener('click', function() {
+        //     updateIcons(this.getTitle());
+        // });
     }
 }
 
