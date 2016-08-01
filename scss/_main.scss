@@ -140,8 +140,8 @@ img {
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
-    min-height: 800px;
-    min-height: 100vh;
+    min-height: 500px;
+    height: 100vh;
     color: $white;
 
     @media (min-width: $bp-m) {
@@ -304,6 +304,15 @@ img {
     }
 }
 
+.section--map {
+    min-height: 500px;
+    display: none;
+
+    @media (min-width: $bp-m) {
+        display: block;
+    }
+}
+
 .section--accommodations {
     svg {
         height: 100px;
@@ -347,10 +356,6 @@ img {
 }
 
 .section--rsvp {}
-
-.section--map {
-    min-height: 500px;
-}
 
 .section--hashtag {
     background-position: top center;
