@@ -274,9 +274,12 @@ img {
                 font-size: 1.2rem;
             }
 
-            &:first-of-type img,
-            &.bordered img {
+            &:first-of-type img {
                 border: 5px solid $secondary;
+            }
+
+            &.not-bordered img {
+                border: none;
             }
         }
     }
