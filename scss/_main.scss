@@ -332,8 +332,9 @@ img {
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
-    min-height: 400px;
-    min-height: 50vh;
+    min-height: 450px;
+    min-height: 52vh;
+    margin-bottom: -50px;
 
     @media (min-width: $bp-m) {
         background-attachment: fixed;
