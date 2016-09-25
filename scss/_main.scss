@@ -188,6 +188,12 @@ img {
     }
 }
 
+.section--notice {
+    padding: 0;
+    color: $white;
+    background: #e09393;
+}
+
 .section--countdown {
     .countdown {
         .block {
@@ -310,6 +316,7 @@ img {
 .section--map {
     min-height: 500px;
     display: none;
+    padding: 0;
 
     @media (min-width: $bp-m) {
         display: block;
