@@ -326,7 +326,7 @@ img {
 .section--accommodations {
     svg {
         height: 100px;
-        fill: #503D51;
+        fill: $primary;
     }
 
     ul {
@@ -342,6 +342,7 @@ img {
     min-height: 450px;
     min-height: 52vh;
     margin-bottom: -50px;
+    z-index: -1;
 
     @media (min-width: $bp-m) {
         background-attachment: fixed;
